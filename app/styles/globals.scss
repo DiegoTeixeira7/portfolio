@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Recursive Sans Linear";
+  src: url("./fonts/RecursiveSansLinearLight.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --radius: 0.25rem;
+  --sidepad: 8rem;
+  
+  @media (orientation: portrait) {
+    --sidepad: 4rem;
+  }
+  @media (min-aspect-ratio: 2/1) {
+    --sidepad: 20rem;
+  }
+}
+
+html {
+  font-size: 1vw;
+  @media (orientation: portrait) {
+    font-size: 2.8vw;
+  }
+  @media (min-aspect-ratio: 2/1) {
+    font-size: 0.85vw;
+  }
+}
+
+body {
+  font-family: "Recursive Sans Linear", sans-serif;
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding-top: 12rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  
+  section {
+    margin-bottom: 8rem;
+  }
+}
+
+h1,
+h2 {
+  font-variation-settings: "wght" 600;
+  line-height: 1.1;
+  letter-spacing: -0.09rem;
+
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-variation-settings: "wght" 600;
+  line-height: 1.75rem;
+}
+
+p {
+  font-size: 1.25rem;
+  font-variation-settings: "wght" 300;
+  line-height: 1.4;
+
+  strong {
+    font-variation-settings: "wght" 600;
+  }
+}
+
+b {
+  font-variation-settings: "wght" 500;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+small {
+  font-size: 1rem;
+  font-variation-settings: "wght" 400;
+}
+
+button, input, select {
+  font-family: "Recursive Sans Linear", sans-serif;
+}
+
+input, select {
+  font-size: 1.125rem;
+  line-height: 1.25rem
+}
+
+label {
+  font-size: 0.875rem;
+  font-variation-settings: "wght" 600;
+  line-height: 0.875rem;
+}
+
+main,
+header,
+menu,
+nav,
+section,
+fieldset,
+footer,
+div,
+span {
+  display: flex;
+}
+
+main,
+header,
+footer {
+  flex-direction: column;
+}
