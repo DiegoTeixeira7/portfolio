@@ -1,0 +1,20 @@
+menu {
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.75rem var(--sidepad);
+  background-color: var(--tea-green);
+ 
+
+  nav {
+    gap: 2rem;
+    
+    a {
+      color: var(--black);
+    }
+    
+  }
+
+  div {
+    gap: 2rem;
+  }
+}
