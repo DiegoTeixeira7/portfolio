@@ -14,7 +14,7 @@ menu {
       color: var(--gray);      
     }
 
-    a:hover {
+    a:hover, .item-nav-click {
       color: var(--white);
     }
   }
