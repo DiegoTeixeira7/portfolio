@@ -16,15 +16,14 @@
 }
 
 :root {
-  --white: #ffffff;
-  --tea-green: #c1edccff;
-  --celadon: #b6cb9eff;
-  --ash-gray: #b0c0bcff;
-  --french-gray: #a7a7a9ff;
-  --dim-gray: #797270ff;
-  --black-olive: #3a3e3bff;
-  --black: #000000;
-  --radius: 0.25rem;
+  --white: #EFEFEF;
+  --green: #05BC5D;
+  --gray: #888888;
+  --gray-dark: #B9B9B9;
+  --gray-light:#D4D4D4
+  --blue: #172635;
+  --black: #272727;
+  --radius: 0.75rem;
   --sidepad: 8rem;
   
   @media (orientation: portrait) {
@@ -48,6 +47,7 @@ html {
 body {
   font-family: "Recursive Sans Linear", sans-serif;
   overflow: hidden;
+  background-color: var(--black)
 }
 
 main {
@@ -76,21 +76,21 @@ h2 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.25rem;
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.75rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   font-variation-settings: "wght" 600;
   line-height: 1.75rem;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-variation-settings: "wght" 300;
   line-height: 1.4;
 
@@ -110,7 +110,7 @@ a {
 
 a,
 small {
-  font-size: 1rem;
+  font-size: 1.175rem;
   font-variation-settings: "wght" 400;
 }
 
@@ -119,7 +119,7 @@ button, input, select {
 }
 
 input, select {
-  font-size: 1.125rem;
+  font-size: 1.175rem;
   line-height: 1.25rem
 }
 

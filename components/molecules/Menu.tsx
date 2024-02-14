@@ -3,8 +3,15 @@ import Image from 'next/image'
 import '@/styles/components/molecules/Menu.scss'
 
 import logo from '@/images/vercel.svg'
+import Button from '@/components/atoms/Button'
+import InputSelect from '../atoms/InputSelect'
 
 export default function Menu() {
+  const languages = [
+    { value: 'PT-BR', label: 'PT' },
+    { value: 'EN', label: 'EN' },
+  ]
+
   return (
     <menu>
       <Link href="/">
@@ -17,12 +24,17 @@ export default function Menu() {
         <Link href="#skills">Habilidades</Link>
         <Link href="#work">Trabalho</Link>
         <Link href="#experience">Experiência</Link>
-        <Link href="#contact">Contate-me</Link>
       </nav>
 
       <div>
-        <span>linguagem</span>
-        <span>Modo</span>
+        <InputSelect
+          options={languages}
+          name="language"
+          id="language"
+          // value={language}
+          // onChange={(e) => {}}
+        />
+        <Button>Contate-me</Button>
       </div>
     </menu>
   )
