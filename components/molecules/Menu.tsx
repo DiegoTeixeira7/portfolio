@@ -7,15 +7,38 @@ import '@/styles/components/molecules/Menu.scss'
 import logo from '@/images/vercel.svg'
 import Button from '@/components/atoms/Button'
 import InputSelect from '../atoms/InputSelect'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { usePortfolioStore } from '@/lib/store'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import { languages } from '@/data/menu'
+import { LanguageSchema } from '@/interfaces/input'
+
+const MainDataSchema = Yup.object().shape({
+  language: Yup.string().required('Campo Obrigatório'),
+})
 
 export default function Menu() {
-  const languages = [
-    { value: 'PT-BR', label: 'PT' },
-    { value: 'EN', label: 'EN' },
-  ]
+  const { language, setLanguage } = usePortfolioStore()
 
   const [item, setItem] = useState('')
+
+  const onSubmit = () => {
+    //
+  }
+
+  const formik = useFormik<LanguageSchema>({
+    initialValues: {
+      language: '',
+    },
+    validationSchema: MainDataSchema,
+    onSubmit,
+    validateOnChange: false,
+  })
+
+  useEffect(() => {
+    formik.setFieldValue('language', language)
+  }, [language])
 
   return (
     <menu>
@@ -62,13 +85,19 @@ export default function Menu() {
       </nav>
 
       <div>
-        <InputSelect
-          options={languages}
-          name="language"
-          id="language"
-          // value={language}
-          // onChange={(e) => {}}
-        />
+        {language && (
+          <InputSelect
+            options={languages}
+            name="language"
+            id="language"
+            value={formik.values.language}
+            error={formik.errors.language}
+            onChange={(e) => {
+              formik.handleChange(e)
+              setLanguage(e.target.value)
+            }}
+          />
+        )}
         <Button>Contate-me</Button>
       </div>
     </menu>
