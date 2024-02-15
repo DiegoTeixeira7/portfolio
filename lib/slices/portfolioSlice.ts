@@ -5,8 +5,12 @@ export const createPortfolioSlice: StateCreator<PortfolioSlice> = (
   set,
   get,
 ) => ({
-  language: '',
-  setLanguage: (language: string) => {
-    set({ language })
+  languageCurrent: 'PT',
+  setLanguageCurrent: (languageCurrent: string) => {
+    set({ languageCurrent })
+  },
+  navItem: '',
+  setNavItem: (navItem: string) => {
+    set({ navItem })
   },
 })

@@ -1,4 +1,6 @@
 export interface PortfolioSlice {
-  language: string
-  setLanguage: (language: string) => void
+  navItem: string
+  setNavItem: (navItem: string) => void
+  languageCurrent: string
+  setLanguageCurrent: (languageCurrent: string) => void
 }

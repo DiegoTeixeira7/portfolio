@@ -19,9 +19,8 @@ const MainDataSchema = Yup.object().shape({
 })
 
 export default function Menu() {
-  const { language, setLanguage } = usePortfolioStore()
-
-  const [item, setItem] = useState('')
+  const { navItem, languageCurrent, setLanguageCurrent, setNavItem } =
+    usePortfolioStore()
 
   const onSubmit = () => {
     //
@@ -29,7 +28,7 @@ export default function Menu() {
 
   const formik = useFormik<LanguageSchema>({
     initialValues: {
-      language: '',
+      language: languageCurrent,
     },
     validationSchema: MainDataSchema,
     onSubmit,
@@ -37,8 +36,8 @@ export default function Menu() {
   })
 
   useEffect(() => {
-    formik.setFieldValue('language', language)
-  }, [language])
+    formik.setFieldValue('language', languageCurrent)
+  }, [languageCurrent])
 
   return (
     <menu>
@@ -49,43 +48,43 @@ export default function Menu() {
       <nav>
         <Link
           href="#home"
-          className={item === 'home' ? 'item-nav-click' : ''}
-          onClick={() => setItem('home')}
+          className={navItem === 'home' ? 'item-nav-click' : ''}
+          onClick={() => setNavItem('home')}
         >
           Home
         </Link>
         <Link
           href="#about"
-          className={item === 'about' ? 'item-nav-click' : ''}
-          onClick={() => setItem('about')}
+          className={navItem === 'about' ? 'item-nav-click' : ''}
+          onClick={() => setNavItem('about')}
         >
           Sobre
         </Link>
         <Link
           href="#skills"
-          className={item === 'skills' ? 'item-nav-click' : ''}
-          onClick={() => setItem('skills')}
+          className={navItem === 'skills' ? 'item-nav-click' : ''}
+          onClick={() => setNavItem('skills')}
         >
           Habilidades
         </Link>
         <Link
           href="#work"
-          className={item === 'work' ? 'item-nav-click' : ''}
-          onClick={() => setItem('work')}
+          className={navItem === 'work' ? 'item-nav-click' : ''}
+          onClick={() => setNavItem('work')}
         >
           Trabalho
         </Link>
         <Link
           href="#experience"
-          className={item === 'experience' ? 'item-nav-click' : ''}
-          onClick={() => setItem('experience')}
+          className={navItem === 'experience' ? 'item-nav-click' : ''}
+          onClick={() => setNavItem('experience')}
         >
           Experiência
         </Link>
       </nav>
 
       <div>
-        {language && (
+        {languageCurrent && (
           <InputSelect
             options={languages}
             name="language"
@@ -94,7 +93,7 @@ export default function Menu() {
             error={formik.errors.language}
             onChange={(e) => {
               formik.handleChange(e)
-              setLanguage(e.target.value)
+              setLanguageCurrent(e.target.value)
             }}
           />
         )}
