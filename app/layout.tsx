@@ -1,4 +1,3 @@
-import Menu from '../components/molecules/Menu'
 import './styles/globals.scss'
 import type { Metadata } from 'next'
 
@@ -15,10 +14,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <main>
-          <Menu />
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   )

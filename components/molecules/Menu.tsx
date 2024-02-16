@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import '@/styles/components/molecules/Menu.scss'
@@ -7,18 +5,19 @@ import '@/styles/components/molecules/Menu.scss'
 import logo from '@/images/vercel.svg'
 import Button from '@/components/atoms/Button'
 import InputSelect from '../atoms/InputSelect'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { usePortfolioStore } from '@/lib/store'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { languages } from '@/data/menu'
+import { languagesCurrent } from '@/data/menu'
 import { LanguageSchema } from '@/interfaces/input'
+import { MenuProps } from '@/interfaces/props'
 
 const MainDataSchema = Yup.object().shape({
   language: Yup.string().required('Campo Obrigatório'),
 })
 
-export default function Menu() {
+export default function Menu({ textsMenu }: MenuProps) {
   const { navItem, languageCurrent, setLanguageCurrent, setNavItem } =
     usePortfolioStore()
 
@@ -51,42 +50,42 @@ export default function Menu() {
           className={navItem === 'home' ? 'item-nav-click' : ''}
           onClick={() => setNavItem('home')}
         >
-          Home
+          {textsMenu.navItems[0]}
         </Link>
         <Link
           href="#about"
           className={navItem === 'about' ? 'item-nav-click' : ''}
           onClick={() => setNavItem('about')}
         >
-          Sobre
+          {textsMenu.navItems[1]}
         </Link>
         <Link
           href="#skills"
           className={navItem === 'skills' ? 'item-nav-click' : ''}
           onClick={() => setNavItem('skills')}
         >
-          Habilidades
+          {textsMenu.navItems[2]}
         </Link>
         <Link
           href="#work"
           className={navItem === 'work' ? 'item-nav-click' : ''}
           onClick={() => setNavItem('work')}
         >
-          Trabalho
+          {textsMenu.navItems[3]}
         </Link>
         <Link
           href="#experience"
           className={navItem === 'experience' ? 'item-nav-click' : ''}
           onClick={() => setNavItem('experience')}
         >
-          Experiência
+          {textsMenu.navItems[4]}
         </Link>
       </nav>
 
       <div>
         {languageCurrent && (
           <InputSelect
-            options={languages}
+            options={languagesCurrent}
             name="language"
             id="language"
             value={formik.values.language}
@@ -97,7 +96,7 @@ export default function Menu() {
             }}
           />
         )}
-        <Button>Contate-me</Button>
+        <Button>{textsMenu.button}</Button>
       </div>
     </menu>
   )
