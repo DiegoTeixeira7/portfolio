@@ -3,11 +3,17 @@ export interface LanguageSchema {
   label: string
 }
 
+export interface MenuType {
+  navItems: string[]
+  button: string
+}
+
+export interface MenuLanguageType {
+  menu: MenuType
+}
+
 export interface LanguagesType {
   [key: string]: {
-    menu: {
-      navItems: string[]
-      button: string
-    }
+    menu: MenuType
   }
 }

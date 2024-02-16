@@ -5,7 +5,6 @@ import '@/styles/components/molecules/Menu.scss'
 import logo from '@/images/vercel.svg'
 import Button from '@/components/atoms/Button'
 import InputSelect from '../atoms/InputSelect'
-import { useEffect } from 'react'
 import { usePortfolioStore } from '@/lib/store'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -33,10 +32,6 @@ export default function Menu({ textsMenu }: MenuProps) {
     onSubmit,
     validateOnChange: false,
   })
-
-  useEffect(() => {
-    formik.setFieldValue('language', languageCurrent)
-  }, [languageCurrent])
 
   return (
     <menu>

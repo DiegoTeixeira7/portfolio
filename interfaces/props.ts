@@ -1,3 +1,5 @@
+import { MenuType } from './language'
+
 export interface MenuProps {
-  textsMenu: any
+  textsMenu: MenuType
 }
