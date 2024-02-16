@@ -4,7 +4,11 @@ menu {
   padding: 1.75rem var(--sidepad);
 
   border-bottom: 1px solid var(--black);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+
+  @media (orientation: portrait) {
+    display: none;
+  }
 
   nav {
     align-items: center;
