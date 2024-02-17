@@ -1,5 +1,6 @@
 'use client'
 
+import Me from '@/components/molecules/Me'
 import Menu from '@/components/molecules/Menu'
 import { languages } from '@/data/languages'
 import { MenuLanguageType } from '@/interfaces/language'
@@ -19,5 +20,14 @@ export default function Home() {
     setTexts(languages[languageCurrent])
   }, [languageCurrent])
 
-  return <>{isClient && <Menu textsMenu={texts.menu} />}</>
+  return (
+    <>
+      {isClient && (
+        <>
+          <Menu textsMenu={texts.menu} />
+          <Me textsMe={texts.menu} />
+        </>
+      )}
+    </>
+  )
 }
