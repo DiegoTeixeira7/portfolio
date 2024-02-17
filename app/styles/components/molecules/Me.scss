@@ -26,6 +26,12 @@ section {
       height: 30rem;
       border-radius: 50%;
     }
+
+    img:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
   }
 
   .typing-animation-one:after, .typing-animation-two:after, .typing-animation-three:after{
