@@ -91,7 +91,13 @@ export default function Me({ textsMe }: MeProps) {
         </p>
       </div>
       <div>
-        <Image src={profile ?? ''} alt="Diego Queiroz"></Image>
+        <Image
+          onClick={() => {
+            window.open('https://github.com/DiegoTeixeira7', '_blank')
+          }}
+          src={profile ?? ''}
+          alt="Diego Queiroz"
+        ></Image>
       </div>
     </section>
   )

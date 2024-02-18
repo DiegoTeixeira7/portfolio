@@ -78,10 +78,18 @@ h2 {
 
 h1 {
   font-size: 4.25rem;
+
+  @media (orientation: portrait) {
+    font-size: 3.75rem;
+  }
 }
 
 h2 {
   font-size: 3.5rem;
+
+  @media (orientation: portrait) {
+    font-size: 2.75rem;
+  }
 }
 
 h3 {
@@ -97,9 +105,13 @@ p {
   line-height: 1.4;
   color: var(--gray);
 
-  strong {
-    font-variation-settings: "wght" 600;
+  @media (orientation: portrait) {
+    font-size: 1.5rem;
   }
+}
+
+strong {
+  font-variation-settings: "wght" 600;
 }
 
 b {
