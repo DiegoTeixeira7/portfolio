@@ -3,14 +3,14 @@
 import Me from '@/components/molecules/Me'
 import Menu from '@/components/molecules/Menu'
 import { languages } from '@/data/languages'
-import { MenuLanguageType } from '@/interfaces/language'
+import { LanguageType } from '@/interfaces/language'
 import { usePortfolioStore } from '@/lib/store'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
   const { languageCurrent } = usePortfolioStore()
   const [isClient, setIsClient] = useState(false)
-  const [texts, setTexts] = useState<MenuLanguageType>(languages.EN)
+  const [texts, setTexts] = useState<LanguageType>(languages.EN)
 
   useEffect(() => {
     setIsClient(true)
@@ -25,7 +25,7 @@ export default function Home() {
       {isClient && (
         <>
           <Menu textsMenu={texts.menu} />
-          <Me textsMe={texts.menu} />
+          <Me textsMe={texts.me} />
         </>
       )}
     </>

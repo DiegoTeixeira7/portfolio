@@ -1,9 +1,9 @@
-import { MenuType } from './language'
+import { MeType, MenuType } from './language'
 
 export interface MenuProps {
   textsMenu: MenuType
 }
 
 export interface MeProps {
-  textsMe: MenuType
+  textsMe: MeType
 }

@@ -83,12 +83,9 @@ export default function Me({ textsMe }: MeProps) {
   return (
     <section id="home">
       <div>
-        <h1 className="typing-animation-one">Olá, eu sou o</h1>
-        <h2 className="typing-animation-two">Diego Queiroz</h2>
-        <p className="typing-animation-three">
-          Sou um desenvolvedor FullStack apaixonado por tecnologia,
-          constantemente buscando evoluir e aprimorar minhas habilidades!
-        </p>
+        <h1 className="typing-animation-one">{textsMe.titleH1}</h1>
+        <h2 className="typing-animation-two">{textsMe.titleH2}</h2>
+        <p className="typing-animation-three">{textsMe.description}</p>
       </div>
       <div>
         <Image
