@@ -12,6 +12,10 @@ export const languages: LanguagesType = {
       description:
         'Sou um desenvolvedor FullStack apaixonado por tecnologia, constantemente buscando evoluir e aprimorar minhas habilidades!',
     },
+    about: {
+      title: 'Sobre mim',
+      description: 'Lorem ipsum',
+    },
   },
   EN: {
     menu: {
@@ -23,6 +27,10 @@ export const languages: LanguagesType = {
       titleH2: 'Diego Queiroz',
       description:
         "I'm a FullStack developer passionate about technology, constantly seeking to evolve and improve my skills!",
+    },
+    about: {
+      title: 'About me',
+      description: 'Lorem ipsum',
     },
   },
 }

@@ -1,0 +1,17 @@
+section {
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (orientation: portrait) {
+    flex-direction: row;
+  }
+
+  h3 {
+    color: var(--green);
+    font-size: 4.25rem;
+
+    @media (orientation: portrait) {
+      font-size: 3.5rem;
+    }
+  }
+}

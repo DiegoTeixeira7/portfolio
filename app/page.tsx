@@ -1,5 +1,6 @@
 'use client'
 
+import About from '@/components/molecules/About'
 import Me from '@/components/molecules/Me'
 import Menu from '@/components/molecules/Menu'
 import { languages } from '@/data/languages'
@@ -26,6 +27,7 @@ export default function Home() {
         <>
           <Menu textsMenu={texts.menu} />
           <Me textsMe={texts.me} />
+          <About textsAbout={texts.about} />
         </>
       )}
     </>

@@ -14,13 +14,20 @@ export interface MeType {
   description: string
 }
 
+export interface AboutType {
+  title: string
+  description: string
+}
+
 export interface LanguageType {
   menu: MenuType
   me: MeType
+  about: AboutType
 }
 export interface LanguagesType {
   [key: string]: {
     menu: MenuType
     me: MeType
+    about: AboutType
   }
 }
